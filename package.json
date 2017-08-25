@@ -1,0 +1,27 @@
+{
+  "name": "auto-bind2",
+  "version": "1.0.0",
+  "description": "A functionally complete ES6 class method auto-bind method",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist -s",
+    "test": "jest"
+  },
+  "repository": "git@github.com:Jamoki/auto-bind2.git",
+  "keywords": [
+    "bind",
+    "auto",
+    "method",
+    "this"
+  ],
+  "author": "John Lyon-Smith",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "jest": "^20.0.4"
+  },
+  "dependencies": {}
+}
