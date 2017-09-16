@@ -1,6 +1,6 @@
 {
   "name": "auto-bind2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A functionally complete ES6 class method auto-bind method",
   "main": "dist/index.js",
   "scripts": {
