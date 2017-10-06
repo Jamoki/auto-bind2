@@ -1,5 +1,6 @@
 .DS_Store
 *.log
+scratch
 node_modules
 coverage
 **/production.json
