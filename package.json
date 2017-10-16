@@ -8,6 +8,9 @@
     "release": "babel-node tasks/release.js",
     "test": "jest"
   },
+  "files": [
+    "dist/**"
+  ],
   "repository": "git@github.com:Jamoki/auto-bind2.git",
   "keywords": [
     "bind",

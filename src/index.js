@@ -15,17 +15,19 @@ function autoBind(obj, filter) {
 export { autoBind }
 export default autoBind
 
-export const isReactMethod = (name) => {
-	'render',
-	'componentWillReceiveProps',
-	'componentDidMount',
-	'componentDidUpdate',
-	'shouldComponentUpdate',
-	'componentWillUnmount',
-	'componentWillUpdate',
-	'forceUpdate',
-	'componentWillMount'
-}
+export const isReactMethod = (name) => (
+  [
+  	'render',
+  	'componentWillReceiveProps',
+  	'componentDidMount',
+  	'componentDidUpdate',
+  	'shouldComponentUpdate',
+  	'componentWillUnmount',
+  	'componentWillUpdate',
+  	'forceUpdate',
+  	'componentWillMount'
+  ].includes(name)
+)
 
 export function reactAutoBind(obj, filter) {
 	filter = filter || (() => true)

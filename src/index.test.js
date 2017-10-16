@@ -1,4 +1,4 @@
-import { autoBind } from './'
+import { autoBind, reactAutoBind, isReactMethod } from './'
 
 test('unbound fails', () => {
   class Life {
@@ -23,12 +23,35 @@ test('bound succeeds', () => {
       this.value = 42
     }
     message() {
-      return this ? this.value : undefined
+      return this.value
     }
   }
 
 	const life = new Life()
-	const message = life.message
+	const func = life.message
 
-  expect(message()).toEqual(42)
+  expect(func()).toEqual(42)
+})
+
+test('react method check succeeds', () => {
+  expect(isReactMethod('componentWillMount')).toBeTruthy()
+})
+
+test('react bind succeeds', () => {
+  class Life {
+    constructor() {
+      reactAutoBind(this)
+      this.value = 42
+    }
+    componentWillMount() {
+      return this ? this.value : undefined
+    }
+  }
+
+  const life = new Life()
+  const func = life.componentWillMount
+
+  console.log(func())
+
+  expect(func()).toBeUndefined()
 })
