@@ -33,6 +33,27 @@ test('bound succeeds', () => {
   expect(func()).toEqual(42)
 })
 
+test('property succeeds', () => {
+  class WithValue {
+    constructor() {
+      autoBind(this)
+      this.value = 42
+    }
+
+    get theValue() {
+      return this.value
+    }
+    set theValue(value) {
+      this.value = value
+    }
+  }
+
+  let withValue = new WithValue()
+
+  withValue.theValue = 100
+  expect(withValue.theValue).toEqual(100)
+})
+
 test('react method check succeeds', () => {
   expect(isReactMethod('componentWillMount')).toBeTruthy()
 })
@@ -50,8 +71,6 @@ test('react bind succeeds', () => {
 
   const life = new Life()
   const func = life.componentWillMount
-
-  console.log(func())
 
   expect(func()).toBeUndefined()
 })
